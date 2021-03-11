@@ -1,0 +1,209 @@
+<div class="container" novalidate>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+
+    <h3> Student's Basic Info </h3>
+
+
+
+    <div>
+
+      <mat-form-field class="form-element">
+        <label class="col-sm-4 col-form-label">Student's Full Name</label>
+        <input matInput placeholder="" formControlName="fullName">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width col-8">
+        <label class="col-sm-4 col-form-label">Program*</label>
+        <mat-select [(ngModel)]="program">
+          <mat-option *ngFor="let program of programs" [value]="program">{{ program }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <h3> Student's Personal Info </h3>
+
+      <span>Father's Name*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="fatherName">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Mother's Name*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="motherName">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Guardian/Referrer Name</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="guardianname">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Student's contact No*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="stcontactno">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Parent's/Guardian's contact No*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="prcontactno">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Student's National Id/Birth certificate No.</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="nationalid">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Student's E-mail</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="email">
+        <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+          {{ getErrorEmail() }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Present Address*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="address">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <h3> Student's Academic Info </h3>
+
+      <span>SSC / Dakhil / Equivalent*</span>
+      <mat-form-field>
+        <mat-label>Select Examination</mat-label>
+        <mat-select [(ngModel)]="sscexam">
+          <mat-option *ngFor="let sscexam of sscexams" [value]="sscexam">{{ sscexam }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>Roll Number*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="sscboard">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Registration Number*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="sscreg">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Passing Year*</span>
+      <mat-form-field>
+        <mat-label>Select Year</mat-label>
+        <mat-select [(ngModel)]="passingyear">
+          <mat-option *ngFor="let passingyear of passingyears" [value]="passingyear">{{ passingyear }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>Board*</span>
+      <mat-form-field>
+        <mat-label>Select Board</mat-label>
+        <mat-select [(ngModel)]="board">
+          <mat-option *ngFor="let board of boards" [value]="board">{{ board }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>GPA*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="sscgpa">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>HSC / Diploma / Equivalent*</span>
+      <mat-form-field>
+        <mat-label>Select Examination</mat-label>
+        <mat-select [(ngModel)]="hscexam">
+          <mat-option *ngFor="let hscexam of hscexams" [value]="hscexam">{{ hscexam }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>Roll Number*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="name">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Registration Number*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="name">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+      <span>Passing Year*</span>
+      <mat-form-field>
+        <mat-label>Select Year</mat-label>
+        <mat-select [(ngModel)]="passingyear">
+          <mat-option *ngFor="let passingyear of passingyears" [value]="passingyear">{{ passingyear }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>Board*</span>
+      <mat-form-field>
+        <mat-label>Select Board</mat-label>
+        <mat-select [(ngModel)]="board">
+          <mat-option *ngFor="let board of boards" [value]="board">{{ board }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>GPA*</span>
+      <mat-form-field class="form-element">
+        <input matInput placeholder="" formControlName="name">
+        <mat-error *ngIf="!name.valid && name.touched">
+          {{ titleAlert }}
+        </mat-error>
+      </mat-form-field>
+
+
+
+
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="formGroup.valid" (submit)="onSubmitButton">Submit Form</button>
+      </div>
+    </div>
+
+
+  </form>
+  <mat-form-field>
+    <mat-select [(ngModel)]="education">
+      <mat-option *ngFor="let education of educationInfo" [value]="education">{{ education }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<ng-template #forminfo>
+  <div class="container">
+    {{ post | json }}
+  </div>
+</ng-template>
